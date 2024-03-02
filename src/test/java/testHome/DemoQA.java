@@ -4,6 +4,8 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class DemoQA {
@@ -23,7 +25,8 @@ public class DemoQA {
         $("#userEmail").setValue(email);
         $("[for='gender-radio-1']").click();
         $("[for='hobbies-checkbox-1']").click();
-
+        File file = new File("src/test/file/Выделение_143.png");
+        $("#uploadPicture").uploadFile(file);
         sleep(2000);
     }
 }
